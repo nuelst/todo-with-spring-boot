@@ -16,6 +16,7 @@ public class TaskController {
 
   @PostMapping("")
   public ResponseEntity create(@RequestBody TaskModel data) {
+    System.out.println("Controller Layer");
     var newTask = this.taskRepository.save(data);
 
     return ResponseEntity.status(HttpStatus.CREATED).body(newTask);

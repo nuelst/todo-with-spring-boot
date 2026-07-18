@@ -12,11 +12,12 @@ Content-Type: application/json
 ###
 POST http://localhost:8080/tasks
 Content-Type: application/json
+Authorization: Basic amQxMjM6c3VwZXI=
 
 {
   "title": "Primeira task",
   "description": "Deve melhorar essa api",
-  "priority": "Alta", 
+  "priority": "Alta",
   "startAt": "2023-04-12T12:30:00",
   "endAt":"2023-05-12T12:30:00",
   "idUser" :"cce8e348-611c-4b62-88d9-1c6b27cf1aed"

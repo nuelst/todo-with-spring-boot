@@ -10,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
@@ -19,9 +20,14 @@ public class UserModel {
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
 
+  @NotBlank
   @Column(unique = true)
   private String username;
+
+  @NotBlank
   private String name;
+
+  @NotBlank
   private String password;
 
   @CreationTimestamp

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -19,7 +21,7 @@ public class UserController {
   PasswordEncoder passwordEncoder;
 
   @PostMapping("")
-  public ResponseEntity create(@RequestBody UserModel data) {
+  public ResponseEntity create(@Valid @RequestBody UserModel data) {
 
     // System.out.println(data.getName());
 
