@@ -1,6 +1,8 @@
 package com.nuelst.todolist.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,13 +15,18 @@ public class UserController {
   UserRepository userRepository;
 
   @PostMapping("")
-  public UserModel create(@RequestBody UserModel data) {
+  public ResponseEntity create(@RequestBody UserModel data) {
 
     // System.out.println(data.getName());
 
-    var newUser = this.userRepository.save(data);
-    return newUser;
+    var user = this.userRepository.findByUsername(data.getUsername());
+    if (user != null) {
+      System.out.println("Username exists!");
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Username already exists!");
 
+    }
+    var newUser = this.userRepository.save(data);
+    return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
   }
 
 }
