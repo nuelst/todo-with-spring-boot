@@ -53,7 +53,7 @@ public class FIlterTaskAuth extends OncePerRequestFilter {
       response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid Credentials");
       return;
     }
-
+    request.setAttribute("idUser", user.getId());
     filterChain.doFilter(request, response);
   }
 

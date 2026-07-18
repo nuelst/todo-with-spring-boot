@@ -12,7 +12,7 @@ Content-Type: application/json
 ###
 POST http://localhost:8080/tasks
 Content-Type: application/json
-Authorization: Basic amQxMjM6c3VwZXI=
+Authorization: Basic jd123 super
 
 {
   "title": "Primeira task",
@@ -20,5 +20,5 @@ Authorization: Basic amQxMjM6c3VwZXI=
   "priority": "Alta",
   "startAt": "2023-04-12T12:30:00",
   "endAt":"2023-05-12T12:30:00",
-  "idUser" :"cce8e348-611c-4b62-88d9-1c6b27cf1aed"
+  "idUser" :"will-not-be-set"
 }
