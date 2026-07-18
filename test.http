@@ -18,7 +18,13 @@ Authorization: Basic jd123 super
   "title": "Primeira task",
   "description": "Deve melhorar essa api",
   "priority": "Alta",
-  "startAt": "2023-04-12T12:30:00",
-  "endAt":"2023-05-12T12:30:00",
-  "idUser" :"will-not-be-set"
-}
+  "startAt": "2027-04-12T12:30:00",
+  "endAt":"2028-05-12T12:30:00"}
+
+
+
+###
+GET http://localhost:8080/tasks
+Content-Type: application/json
+Authorization: Basic jd123 super
+
