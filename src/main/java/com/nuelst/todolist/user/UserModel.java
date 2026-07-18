@@ -1,37 +1,59 @@
 package com.nuelst.todolist.user;
 
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Data;
+
+@Data
+@Entity
 public class UserModel {
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  private UUID id;
+
   private String username;
   private String name;
   private String password;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+  @CreationTimestamp
+  private LocalDateTime createdAt;
 
-  public String getName() {
-    return name;
-  }
+  // Can use @Getter or Setter for a field or just to make for class
 
-  public void setPassword(String password) {
-    this.password = password;
-  }
+  // public void setName(String name) {
+  // this.name = name;
+  // }
 
-  public String getPassword() {
-    return password;
-  }
+  // public String getName() {
+  // return name;
+  // }
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+  // public void setPassword(String password) {
+  // this.password = password;
+  // }
 
-  public String getUsername() {
-    return username;
-  }
+  // public String getPassword() {
+  // return password;
+  // }
 
-  @Override
-  public String toString() {
-    // TODO Auto-generated method stub
-    return super.toString();
-  }
+  // public void setUsername(String username) {
+  // this.username = username;
+  // }
+
+  // public String getUsername() {
+  // return username;
+  // }
+
+  // @Override
+  // public String toString() {
+  // // TODO Auto-generated method stub
+  // return super.toString();
+  // }
 }
